@@ -22,7 +22,8 @@
         <script src="//code.jivosite.com/widget.js" data-jv-id="8sk4gGzrKe" async></script>
     <?php endif; ?>
 </head>
-<body <?php body_class(); ?>>
+<?php $user = wp_get_current_user()->roles; ?>
+<body <?php body_class($user); ?>>
 <?php if ( is_home() || is_front_page() ): ?>
     <div class="navigation" id="js-navigation">
         <div class="navigation__list">

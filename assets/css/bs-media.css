@@ -84,6 +84,13 @@
 	}
 }
 
+@media screen and (max-width: 450px) {
+	.certificate-section__img {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
 @media screen and (max-width: 400px) {
 	.partners__img {
 		padding: 0 10px;

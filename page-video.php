@@ -6,33 +6,48 @@ get_header();
 ?>
 
 <?php if (is_user_logged_in()): ?>
+	<?php
+	$user = wp_get_current_user()->roles;
+	$user_role = '';
+	if ($user[0] === 'administrator') {
+		$user_role = 'viticultura';
+	} else {
+		$user_role = $user;
+	}
+	?>
+
 	<?php $page_bg_image_url = getThePostThumbSrc(1920, 340); ?>
 
-    <div class="finance-single">
+    <div class="finance-single video-single">
         <section class="finance-single section-dark page-intro"
                  style="background-image: url('<?php echo $page_bg_image_url; ?>'); background-position: center; background-size: cover;">
             <div class="page-intro__container">
                 <header class="section__header section__header--center">
                     <h2 class="section__title"><?php the_title(); ?></h2>
                 </header>
-                <!--				<p>-->
-				<?php //echo carbon_get_theme_option('crb_finance_single_text' . get_lang()); ?><!--</p>-->
             </div>
         </section>
         <section class="finance-single__container">
 			<?php get_sidebar('categories'); ?>
+
             <section class="main-single">
 				<?php
 				$video = new WP_Query([
 					'post_type' => 'video',
 					'posts_per_page' => 1,
-					'category_video' => 'legumicultura'
+					'category_video' => $user_role
 				]);
 				?>
 				<?php if ($video->have_posts()): ?>
 					<?php while ($video->have_posts()): ?>
 						<?php $video->the_post(); ?>
-						<?php the_content(); ?>
+                        <header class="section__header">
+                            <h2 class="section__title">
+								<?php the_title(); ?>
+                            </h2>
+                        </header>
+                        <video controls src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>">
+                        </video>
 					<?php endwhile; ?>
 				<?php else: ?>
 				<?php endif; ?>

@@ -192,7 +192,7 @@
 			'has_archive' => true,
 			'hierarchical' => false,
 			'menu_position' => null,
-			'supports' => array('title', 'editor')
+			'supports' => array('title')
 		));
 
 		register_post_type('certificate', array(

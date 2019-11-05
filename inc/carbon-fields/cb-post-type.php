@@ -101,10 +101,8 @@
 					         '1' => 'no',
 					         '2' => 'yes',
 				         ) ),
-			         Field::make( 'file', 'crb_video_file', __( 'Video File' ) )
-				         ->set_type( array( 'video' ) )
-				         ->set_value_type( 'url' )
-
+			         Field::make( 'text', 'crb_video_link', __( 'Video Link' ) )
+				         ->set_help_text( 'url for video from domen' )
 		         ) );
 	}
 

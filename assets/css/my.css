@@ -255,7 +255,7 @@ p {
 
 .container {
 	margin: 0 auto;
-	width: 1200px;
+	max-width: 1200px;
 }
 
 .content {
@@ -4842,4 +4842,37 @@ p {
 }
 .certificate-single img {
 	margin-bottom: 30px;
+}
+.certificate__wrap {
+	position: relative;
+	z-index: 4;
+}
+.certificate__inner {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1083px;
+	z-index: 4;
+}
+.certificate-section__img {
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.certificate-section__img a {
+	display: block;
+}
+.certificate-section__img img {
+	max-width: none;
+	width: 100%;
+}
+.certificate-section {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.certificate-section .slider__arrow {
+	top: 40%;
+}
+.list-video .sublist a.disable {
+	opacity: .4;
+	cursor: default;
 }

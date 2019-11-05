@@ -281,14 +281,6 @@ jQuery(document).ready(function ($) {
 	};
 	mainMenuActiveElemOfSubMenu();
 
-	let disabelVideoBar = function () {
-		$('.flowplayer .fp-ui').on('click', function () {
-			alert('ok');
-			return false;
-		});
-	};
-	disabelVideoBar();
-
 	let closeVideoPopup = function () {
 		$('.video-popup input[type="submit"]').on('click', function () {
 			setTimeout(function(){
@@ -299,4 +291,54 @@ jQuery(document).ready(function ($) {
 	};
 	closeVideoPopup();
 
+	let certificateSlider = function () {
+		$('#js-certificate__slider').slick({
+			arrows: false,
+		});
+
+		$('.certificate-section .slider__arrow-right').on('click', function (e) {
+			$('#js-certificate__slider').slick('slickNext');
+		});
+
+		$('.certificate-section .slider__arrow-left').on('click', function (e) {
+			$('#js-certificate__slider').slick('slickPrev');
+		});
+	};
+	certificateSlider();
+
+	let disableVideoInList = function () {
+		$('.list-video .sublist li a').addClass('disable');
+		$('.list-video .sublist li:first-child a').removeClass('disable');
+
+		$('.list-video .sublist a').on('click', function (e) {
+			if($(this).hasClass('disable')){
+				e.preventDefault();
+			}
+		});
+	};
+	disableVideoInList();
+
+	let disableSeeking = function () {
+		let video = document.querySelector('.no-forward'),
+			previousTime = 0;
+
+		video.addEventListener('timeupdate', function (evt) {
+			if (!video.seeking) {
+				previousTime = Math.max(previousTime, video.currentTime);
+			}
+		}, false);
+
+		video.addEventListener('seeking', function (evt) {
+			if (video.currentTime > previousTime) {
+				video.currentTime = previousTime;
+			}
+		}, true);
+	};
+
+	let seekVideo = function () {
+		if(!$('body').hasClass('administrator')){
+			disableSeeking();
+		}
+	};
+	seekVideo();
 });
