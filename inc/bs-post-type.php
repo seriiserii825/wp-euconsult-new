@@ -194,4 +194,31 @@
 			'menu_position' => null,
 			'supports' => array('title', 'editor')
 		));
+
+		register_post_type('certificate', array(
+			'labels' => array(
+				'name' => __('Certificate'), // Основное название типа записи
+				'singular_name' => __('Certificate'), // отдельное название записи типа Book
+				'add_new' => __('Add new'),
+				'add_new_item' => __('Add new'),
+				'edit_item' => __('Edit new'),
+				'new_item' => __('New item'),
+				'view_item' => __('View'),
+				'search_items' => __('Search'),
+				'parent_item_colon' => '',
+				'menu_name' => __('Certificate')
+
+			),
+			'public' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'query_var' => true,
+			'rewrite' => true,
+			'capability_type' => 'post',
+			'has_archive' => true,
+			'hierarchical' => false,
+			'menu_position' => null,
+			'supports' => array('title', 'editor', 'thumbnail')
+		));
 	}

@@ -107,3 +107,14 @@
 
 		         ) );
 	}
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_certificate_options' );
+function crb_attach_certificate_options() {
+	Container::make( 'post_meta', __( 'Certificate' ) )
+		->where( 'post_type', '=', 'certificate' )
+		->add_fields( array(
+			Field::make( 'rich_text', 'crb_certificate_short_text_ro', __( 'crb_certificate_short_text ro' ) ),
+			Field::make( 'rich_text', 'crb_certificate_short_text_ru', __( 'crb_certificate_short_text ru' ) ),
+			Field::make( 'rich_text', 'crb_certificate_short_text_en', __( 'crb_certificate_short_text en' ) ),
+		) );
+}

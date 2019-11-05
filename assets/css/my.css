@@ -4732,3 +4732,114 @@ p {
 	text-decoration: underline;
 	color: #fccc1c;
 }
+.certificate {
+	display: table;
+	margin: 0 auto;
+	padding: 40px 15px 0;
+	max-width: 1045px;
+}
+.certificate__title {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 30px;
+	vertical-align: top;
+	padding-bottom: 6px;
+	font-family: 'Spinnaker', sans-serif;
+	font-size: 32px;
+	color: #1A2B6D;
+}
+
+.certificate__title::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 87px;
+	height: 3px;
+	background: #fccc1c;
+}
+.certificate__item {
+	margin-bottom: 30px;
+	padding: 20px 30px;
+	background: #fff;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.certificate__item:last-child {
+	margin-bottom: 0;
+}
+.certificate__item-wrap {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+	margin-bottom: 30px;
+}
+.certificate__item-wrap .certificate__img img {
+	display: block;
+}
+.certificate__item-wrap.reverse .certificate__img {
+	order: 3;
+}
+.certificate__item-wrap.reverse .certificate__content {
+	order: 2;
+}
+.certificate__content {
+	font-family: 'Helvetica Light', sans-serif;
+	font-size: 17px;
+	line-height: 28px;
+	font-weight: 700;
+	letter-spacing: .68px;
+	color: #445E6B;
+}
+.certificate__content strong {
+	font-weight: bold;
+}
+.certificate__content ul li {
+	position: relative;
+	padding-left: 20px;
+	font-weight: normal;
+}
+
+.certificate__content ul li::before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fccc1c;
+}
+.certificate .btn {
+	display: table;
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	transition: all .4s;
+}
+.certificate .btn:hover {
+	background: #245786;
+}
+.certificate-single {
+	padding: 60px 15px 0;
+}
+.certificate-single__content {
+	padding: 30px;
+	background: #fff;
+}
+.certificate-single__content strong {
+	display: block;
+	margin-bottom: 15px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.certificate-single__content ul {
+	margin-bottom: 30px;
+}
+.certificate-single__content li {
+	padding: 12px;
+	border-bottom: 1px solid #fccc1c;
+}
+.certificate-single img {
+	margin-bottom: 30px;
+}

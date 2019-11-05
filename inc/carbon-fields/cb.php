@@ -320,22 +320,8 @@ function crb_attach_theme_options()
 				->set_width(30),
 			Field::make('text', 'crb_login_title_en', __('crb_login_title_en'))
 				->set_width(30),
-		))
-		->add_tab(__('Certificates'), array(
-			Field::make('complex', 'crb_certificates', __('Fields'))
-				->add_fields(array(
-					Field::make('text', 'crb_title_ro', __('crb_title_ro'))
-						->set_width(30),
-					Field::make('text', 'crb_title_ru', __('crb_title_ru'))
-						->set_width(30),
-					Field::make('text', 'crb_title_en', __('crb_title_en'))
-						->set_width(30),
-					
-					Field::make('image', 'crb_image', __('Image'))
-				))
-				->set_layout('tabbed-horizontal')
 		));
-	
+
 	// Add second options page under 'Basic Options'
 	Container::make('theme_options', 'Finance Sidebar')
 		->set_page_parent($basic_options_container)// reference to a top level container
@@ -451,7 +437,19 @@ function crb_attach_theme_options()
 			Field::make('text', 'crb_video_title_en', __('Block video_title en'))
 				->set_width(30),
 		));
-	
+
+	// Add second options page under 'Basic Options'
+	Container::make('theme_options', 'Translate')
+		->set_page_parent($basic_options_container)// reference to a top level container
+		->add_tab(__('Buttons'), array(
+			Field::make('text', 'crb_know_more_ro', __('Block know_more ro'))
+				->set_width(30),
+			Field::make('text', 'crb_know_more_ru', __('Block know_more ru'))
+				->set_width(30),
+			Field::make('text', 'crb_know_more_en', __('Block know_more en'))
+				->set_width(30),
+		));
+
 }
 
 add_action('after_setup_theme', 'crb_load');

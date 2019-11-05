@@ -257,6 +257,7 @@ jQuery(document).ready(function ($) {
 		let romania = 'romania';
 		let news = 'news';
 		let idea = 'idea';
+		let certificate = 'certificate';
 
 		if(url.includes(finance)) {
 			$('#js-main-menu li:nth-child(4)').addClass('current-menu-item');
@@ -264,6 +265,10 @@ jQuery(document).ready(function ($) {
 
 		if(url.includes(news)) {
 			$('#js-main-menu li:nth-child(7)').addClass('current-menu-item');
+		}
+
+		if(url.includes(certificate)) {
+			$('#js-main-menu li:nth-child(8)').addClass('current-menu-item');
 		}
 
 		if(url.includes(idea)) {

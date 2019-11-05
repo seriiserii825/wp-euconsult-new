@@ -16,6 +16,15 @@
 		right: 14px;
 	}
 }
+@media screen and (max-width: 992px) {
+	.certificate__item-wrap {
+		display: block;
+	}
+	.certificate__img {
+		margin-bottom: 30px;
+	}
+}
+
 @media screen and (max-width: 940px) {
 	.idea__content {
 		max-width: 600px;
@@ -63,6 +72,9 @@
 	}
 	.idea .slider__arrow {
 		width: 46px;
+	}
+	.certificate__title {
+		font-size: 24px;
 	}
 }
 @media screen and (max-width: 500px) {
