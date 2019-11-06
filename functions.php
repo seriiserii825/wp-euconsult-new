@@ -111,6 +111,10 @@ function showVideoInSidebar($term_id)
 	$html .= '</li>';
 	echo $html;
 }
+//add_action( 'init', 'my_setcookie_example' );
+//function my_setcookie_example() {
+//	setcookie( 'video', 0, 30 * 86400);
+//}
 
 ///**
 // * Implement the Custom Header feature.

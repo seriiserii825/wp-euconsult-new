@@ -318,9 +318,10 @@ jQuery(document).ready(function ($) {
 	};
 	disableVideoInList();
 
+	let video = document.querySelector('.no-forward');
+
 	let disableSeeking = function () {
-		let video = document.querySelector('.no-forward'),
-			previousTime = 0;
+		let	previousTime = 0;
 
 		video.addEventListener('timeupdate', function (evt) {
 			if (!video.seeking) {
@@ -341,4 +342,26 @@ jQuery(document).ready(function ($) {
 		}
 	};
 	seekVideo();
+
+	function setCookie(name, value) {
+		document.cookie = name + "=" + value;
+	}
+
+	function getCookie(name) {
+		var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+		if (r) return r[2];
+		else return "";
+	}
+
+	let setVideoTime = function () {
+		console.log(getCookie('video'));
+		video.addEventListener('pause', function () {
+			let locationHref = location.href;
+			let videoTime = video.currentTime;
+			console.log(videoTime);
+			setCookie('video', videoTime);
+			console.log(getCookie('video'));
+		});
+	}
+	setVideoTime();
 });
