@@ -46,7 +46,8 @@ get_header();
 								<?php the_title(); ?>
                             </h2>
                         </header>
-                        <video controls src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>">
+                        <video class="no-forward"  controls controlsList="nodownload" >
+                            <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
                         </video>
 					<?php endwhile; ?>
 				<?php else: ?>
