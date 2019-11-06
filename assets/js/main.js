@@ -363,4 +363,24 @@ jQuery(document).ready(function ($) {
 		});
 	}
 	setVideoTime();
+
+	let removeDisableLink = function(){
+		if($('body').hasClass('administrator')){
+			$('.list-video .sublist a').removeClass('disable');
+		}
+		if($('.list-video .sublist a')){
+
+		}
+	};
+	removeDisableLink();
+
+	let activeVideoLink = function () {
+		$('.list-video .sublist a').each(function () {
+			let href = $(this).attr('href');
+			if(href == location.href){
+				$(this).addClass('active');
+			}
+		});
+	};
+	activeVideoLink();
 });

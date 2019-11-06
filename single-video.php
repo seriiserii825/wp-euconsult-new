@@ -28,16 +28,9 @@ get_header();
             <section class="finance-single__container">
 				<?php get_sidebar('categories'); ?>
                 <section class="main-single">
-	                <?php
-	                $video = new WP_Query([
-		                'post_type' => 'video',
-		                'posts_per_page' => 1,
-		                'category_video' => $user_role
-	                ]);
-	                ?>
-	                <?php if ($video->have_posts()): ?>
-		                <?php while ($video->have_posts()): ?>
-			                <?php $video->the_post(); ?>
+	                <?php if (have_posts()): ?>
+		                <?php while (have_posts()): ?>
+			                <?php the_post(); ?>
                             <header class="section__header">
                                 <h2 class="section__title">
 					                <?php the_title(); ?>

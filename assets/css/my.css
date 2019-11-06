@@ -4876,3 +4876,6 @@ p {
 	opacity: .4;
 	cursor: default;
 }
+.list-video .sublist a.active {
+	color: red;
+}
