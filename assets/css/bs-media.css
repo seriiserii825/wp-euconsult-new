@@ -15,6 +15,11 @@
 	.history-arow--right {
 		right: 14px;
 	}
+
+	.video-page__content {
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 880px;
+	}
 }
 @media screen and (max-width: 992px) {
 	.certificate__item-wrap {
@@ -22,6 +27,11 @@
 	}
 	.certificate__img {
 		margin-bottom: 30px;
+	}
+	.finance-single__container video {
+		display: table;
+		margin: 0 auto 40px;
+		width: 100%;
 	}
 }
 
@@ -38,6 +48,11 @@
 		margin-bottom: 20px;
 		max-width: 500px;
 	}
+
+	.video-page__content {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 590px;
+	}
 }
 @media screen and (max-width: 600px) {
 	.history__text {
@@ -52,6 +67,10 @@
 		padding-right: 15px;
 	}
 
+	.video-page__content {
+		display: block;
+		max-width: 280px;
+	}
 	.partners .slick-slide img {
 		width: 280px;
 		height: auto;

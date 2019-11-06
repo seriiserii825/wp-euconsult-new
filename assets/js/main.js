@@ -319,9 +319,32 @@ jQuery(document).ready(function ($) {
 	disableVideoInList();
 
 	let video = document.querySelector('.no-forward');
+	let vlink = document.querySelector('video > source').getAttribute('src'); // Запишет в переменную vlink ссылку на видео
+
+	if(!localStorage.getItem(vlink)) {
+		localStorage.setItem(vlink, '0');
+	}else{
+		video.currentTime = localStorage.getItem(vlink);
+	}
+
+
+	let setVideoTime = function () {
+		video.volume = 0.1;
+
+		setInterval(function () {
+			let videoTime = video.currentTime;
+			localStorage.setItem(vlink, videoTime);
+		}, 1000);
+
+		video.addEventListener('pause', function () {
+			let videoTime = video.currentTime;
+			localStorage.setItem(vlink, videoTime);
+		});
+	};
+	setVideoTime();
 
 	let disableSeeking = function () {
-		let	previousTime = 0;
+		let	previousTime = localStorage.getItem(vlink);
 
 		video.addEventListener('timeupdate', function (evt) {
 			if (!video.seeking) {
@@ -336,6 +359,7 @@ jQuery(document).ready(function ($) {
 		}, true);
 	};
 
+
 	let seekVideo = function () {
 		if(!$('body').hasClass('administrator')){
 			disableSeeking();
@@ -343,42 +367,19 @@ jQuery(document).ready(function ($) {
 	};
 	seekVideo();
 
-	if(!localStorage.getItem('video')) {
-		localStorage.setItem('video', '0');
-	}else{
-		video.currentTime = localStorage.getItem('video');
-	}
-
-	let setVideoTime = function () {
-		video.volume = 0.1;
-
-		setInterval(function () {
-			let videoTime = video.currentTime;
-			localStorage.setItem('video', videoTime);
-		}, 1000);
-
-		video.addEventListener('pause', function () {
-			let videoTime = video.currentTime;
-			localStorage.setItem('video', videoTime);
-		});
-	}
-	setVideoTime();
-
 	let removeDisableLink = function(){
 		if($('body').hasClass('administrator')){
 			$('.list-video .sublist a').removeClass('disable');
 		}
-		if($('.list-video .sublist a')){
-
-		}
 	};
-	removeDisableLink();
+	// removeDisableLink();
 
 	let activeVideoLink = function () {
 		$('.list-video .sublist a').each(function () {
 			let href = $(this).attr('href');
-			if(href == location.href){
+			if(href === location.href){
 				$(this).addClass('active');
+				$(this).removeClass('disable');
 			}
 		});
 	};
