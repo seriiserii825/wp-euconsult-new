@@ -343,24 +343,16 @@ jQuery(document).ready(function ($) {
 	};
 	seekVideo();
 
-	function setCookie(name, value) {
-		document.cookie = name + "=" + value;
-	}
-
-	function getCookie(name) {
-		var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-		if (r) return r[2];
-		else return "";
+	if(!localStorage.getItem('video')) {
+		localStorage.setItem('video', '0');
+	}else{
+		video.currentTime = localStorage.getItem('video');
 	}
 
 	let setVideoTime = function () {
-		console.log(getCookie('video'));
 		video.addEventListener('pause', function () {
-			let locationHref = location.href;
 			let videoTime = video.currentTime;
-			console.log(videoTime);
-			setCookie('video', videoTime);
-			console.log(getCookie('video'));
+			localStorage.setItem('video', videoTime);
 		});
 	}
 	setVideoTime();
