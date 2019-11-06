@@ -384,4 +384,11 @@ jQuery(document).ready(function ($) {
 		});
 	};
 	activeVideoLink();
+
+	let removeDisabelLinkInSidebar = function () {
+		video.addEventListener('ended', function () {
+			$('.list-video .sublist li a.active').closest('li').next().find('a').removeClass('disable');
+		});
+	};
+	removeDisabelLinkInSidebar();
 });
