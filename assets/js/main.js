@@ -350,6 +350,13 @@ jQuery(document).ready(function ($) {
 	}
 
 	let setVideoTime = function () {
+		video.volume = 0.1;
+
+		setInterval(function () {
+			let videoTime = video.currentTime;
+			localStorage.setItem('video', videoTime);
+		}, 1000);
+
 		video.addEventListener('pause', function () {
 			let videoTime = video.currentTime;
 			localStorage.setItem('video', videoTime);
