@@ -4711,6 +4711,10 @@ p {
 	box-shadow: none;
 	border-bottom: 1px solid #ccc;
 }
+.sidebar ul.list li .sublist a.sublist__examen-link {
+	text-transform: uppercase;
+}
+
 
 .sidebar ul.list li .sublist a.aux {
 	font-weight: normal;
@@ -4905,3 +4909,37 @@ p {
 	font-weight: bold;
 	color: white;
 }
+.examen-page__content {
+	margin: 40px auto;
+	padding: 40px 15px;
+	max-width: 1140px;
+	box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+.examen-page__content .form-group {
+	display: grid;
+	grid-template-columns: 400px 1fr;
+	grid-gap: 20px;
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+.examen-page__content .form-group .wpcf7-list-item label {
+	display: flex;
+	cursor: pointer;
+}
+.examen-page__content .form-group span {
+	display: block;
+}
+.examen-page__content .form-group input[type="email"],
+.examen-page__content .form-group input[type="text"] {
+	padding: 10px;
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	box-sizing: border-box;
+}
+
+.examen-page__content .form-group input[type="radio"] {
+	margin-right: 10px;
+	cursor: pointer;
+}
+

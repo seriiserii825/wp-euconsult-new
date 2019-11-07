@@ -1,25 +1,39 @@
-<div class="video-popup__inner">
-    <div class="form-inner">
-        <h3>Cum credeti?</h3>
-
-        <div class="form-group">
-            <p>A fost util cursul vizionat?</p>
-            [radio util id:util-yes use_label_element default:1 "Да"]
-            [radio util id:util-no use_label_element "Нет"]
-        </div>
-
-        <div class="form-group">
-            <p>Ar fi util sa vizionati seminare in cimp?</p>
-            [radio seminar id:seminar-yes use_label_element default:1 "Да"]
-            [radio seminar id:seminar-no use_label_element "Нет"]
-        </div>
-
-        <div class="form-group">
-            <p>Ati recomanda acest curs altor persoane?</p>
-            [radio person id:person-yes use_label_element default:1 "Да"]
-            [radio person id:person-no use_label_element "Нет"]
-        </div>
-
-        [submit "Отправить"]
+<div class="form-group">
+    <div class="user__name">[text* your-name placeholder "Numele"]</div>
+    <div class="user__email">[email* your-email placeholder "Email"]</div>
+</div>
+<div class="form-group">
+    <div class="question">Va placut cursul?</div>
+    <div class="answer">
+        [radio radio-41 use_label_element default:1 "da"]
+        [radio radio-41 use_label_element default:1 "nu"]
+        [radio radio-41 use_label_element default:1 "nu stiu"]
     </div>
+</div>
+<div class="form-group">
+    <div class="question">Cite ori v-ati uitat la un video?</div>
+    <div class="answer">
+        [radio radio-42 use_label_element default:1 "1"]
+        [radio radio-42 use_label_element default:1 "2"]
+        [radio radio-42 use_label_element default:1 "mai mult de 2"]
+    </div>
+</div>
+<div class="form-group">
+    <div class="question">Cit timp ati invatat?</div>
+    <div class="answer">
+        [radio radio-43 use_label_element default:1 "10"]
+        [radio radio-43 use_label_element default:1 "20"]
+        [radio radio-43 use_label_element default:1 "o luna"]
+    </div>
+</div>
+<div class="form-group">
+    <div class="question">Doriti sa inavatati si alt curs?</div>
+    <div class="answer">
+        [radio radio-44 use_label_element default:1 "nu"]
+        [radio radio-44 use_label_element default:1 "da"]
+        [radio radio-44 use_label_element default:1 "nu stiu"]
+    </div>
+</div>
+<div class="examen-submit-btn">
+    [submit "Trimite"]
 </div>

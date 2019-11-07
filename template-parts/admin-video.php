@@ -1,46 +1,51 @@
 <?php
 $cat_args = array(
-	'orderby'    => 'term_id',
-	'order'      => 'ASC',
+	'orderby' => 'term_id',
+	'order' => 'ASC',
 	'hide_empty' => true,
 );
 
-$terms = get_terms( 'category_video', $cat_args );
+$terms = get_terms('category_video', $cat_args);
 ?>
-<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ): ?>
-	<?php foreach ( $terms as $term ): ?>
+<?php if (!empty($terms) && !is_wp_error($terms)): ?>
+	<?php foreach ($terms as $term): ?>
 		<?php $term_name = $term->name;
-		$term_id   = $term->term_id;
+		$term_id = $term->term_id;
 		$term_slug = $term->slug;
 		?>
-		<li>
-			<a href="<?php echo get_term_link( (int) $term_id, 'category_video' ); ?>">
+        <li>
+            <a href="<?php echo get_term_link((int)$term_id, 'category_video'); ?>">
 				<?php echo $term_name; ?>
-			</a>
+            </a>
 			<?php $sublist_video = new WP_Query([
 				'post_type' => 'video',
 				'category_video' => $term_slug,
 				'posts_per_page' => -1
 			]); ?>
-			<ul class="sublist">
-				<?php if($sublist_video->have_posts()): ?>
-					<?php while($sublist_video->have_posts()): ?>
+            <ul class="sublist">
+				<?php if ($sublist_video->have_posts()): ?>
+					<?php while ($sublist_video->have_posts()): ?>
 						<?php $sublist_video->the_post(); ?>
 						<?php $aux = carbon_get_the_post_meta('crb_video_aux'); ?>
-						<li>
+                        <li>
 							<?php
 							$classAux = '';
-							if($aux == 2){
+							if ($aux == 2) {
 								$classAux = 'class="aux"';
 							}
 							?>
-							<a <?php echo $classAux; ?> href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</li>
+                            <a <?php echo $classAux; ?> href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </li>
 					<?php endwhile; ?>
+
+					<?php
+					$page_id = 522;
+					echo '<li>' . '<a class="sublist__examen-link" href="' . get_the_permalink($page_id) . '">' . get_the_title($page_id) . '</a>' . '</li>';
+					?>
 					<?php wp_reset_postdata(); ?>
 				<?php else: ?>
 				<?php endif; ?>
-			</ul>
-		</li>
+            </ul>
+        </li>
 	<?php endforeach; ?>
 <?php endif; ?>

@@ -12,7 +12,7 @@ get_header();
 	?>
 
 
-	<?php $page_bg_image_url = getThePostThumbSrc(1920, 340); ?>
+<?php $page_bg_image_url = kama_thumb_src('w=1905 &h=340 &post_id=21'); ?>
 
     <div class="finance-single video-single">
         <section class="finance-single section-dark page-intro"

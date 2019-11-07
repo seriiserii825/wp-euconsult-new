@@ -84,6 +84,16 @@ function showVideoInSidebar($term_id)
 	$term_name = $term->name;
 	$term_slug = $term->slug;
 
+	if($term_id == 12){
+		$page_id = 522;
+	}
+	if($term_id == 13){
+		$page_id = 546;
+	}
+	if($term_id == 11){
+		$page_id = 549;
+	}
+
 	$html = '';
 	$html .= '<li>';
 	$html .= '<a href="' . get_term_link((int)$term_id, "category_video") . '">' . $term_name . '</a>';
@@ -106,7 +116,7 @@ function showVideoInSidebar($term_id)
 			$html .= '</li>';
 		}
 	}
-
+	$html .= '<li>'.'<a class="sublist__examen-link" href="'.get_the_permalink($page_id).'">'.get_the_title($page_id).'</a>'.'</li>';
 	$html .= '</ul>';
 	$html .= '</li>';
 	echo $html;

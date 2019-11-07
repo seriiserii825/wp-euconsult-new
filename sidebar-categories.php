@@ -11,15 +11,12 @@
                 <?php elseif(current_user_can('vegetables')): ?>
                     <?php $term_id = 11; ?>
                     <?php showVideoInSidebar($term_id); ?>
-<!--	                --><?php //require_once __DIR__.'/template-parts/legumicultura-video.php';?>
                 <?php elseif(current_user_can('pomicultura')): ?>
 	                <?php $term_id = 12; ?>
 	                <?php showVideoInSidebar($term_id); ?>
-<!--	                --><?php //require_once __DIR__.'/template-parts/legumicultura-video.php';?>
                 <?php elseif(current_user_can('viticultura')): ?>
 	                <?php $term_id = 13; ?>
 	                <?php showVideoInSidebar($term_id); ?>
-<!--	                --><?php //require_once __DIR__.'/template-parts/legumicultura-video.php';?>
                 <?php endif; ?>
             </ul>
         </div>
