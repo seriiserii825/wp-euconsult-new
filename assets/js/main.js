@@ -319,76 +319,95 @@ jQuery(document).ready(function ($) {
 	disableVideoInList();
 
 	let video = document.querySelector('.no-forward');
-	let vlink = document.querySelector('video > source').getAttribute('src'); // Запишет в переменную vlink ссылку на видео
+	if(video){
+		let vlink = document.querySelector('video > source').getAttribute('src'); // Запишет в переменную vlink ссылку на видео
+		let user_id = $('body').attr('data-id');
+		vlink = vlink+user_id;
 
-	if(!localStorage.getItem(vlink)) {
-		localStorage.setItem(vlink, '0');
-	}else{
-		video.currentTime = localStorage.getItem(vlink);
+		if(!localStorage.getItem(vlink)) {
+			localStorage.setItem(vlink, '0');
+		}else{
+			video.currentTime = localStorage.getItem(vlink);
+		}
+
+
+		let setVideoTime = function () {
+			video.volume = 0.1;
+
+			setInterval(function () {
+				let videoTime = video.currentTime;
+				localStorage.setItem(vlink, videoTime);
+			}, 1000);
+
+			video.addEventListener('pause', function () {
+				let videoTime = video.currentTime;
+				localStorage.setItem(vlink, videoTime);
+			});
+		};
+		setVideoTime();
+
+		let disableSeeking = function () {
+			let	previousTime = localStorage.getItem(vlink);
+
+			video.addEventListener('timeupdate', function (evt) {
+				if (!video.seeking) {
+					previousTime = Math.max(previousTime, video.currentTime);
+				}
+			}, false);
+
+			video.addEventListener('seeking', function (evt) {
+				if (video.currentTime > previousTime) {
+					video.currentTime = previousTime;
+				}
+			}, true);
+		};
+
+
+		let seekVideo = function () {
+			if(!$('body').hasClass('administrator')){
+				disableSeeking();
+			}
+		};
+		seekVideo();
+
+		let removeDisableLink = function(){
+			if($('body').hasClass('administrator')){
+				$('.list-video .sublist a').removeClass('disable');
+			}
+		};
+		// removeDisableLink();
+
+		let activeVideoLink = function () {
+			$('.list-video .sublist a').each(function () {
+				let href = $(this).attr('href');
+				if(href === location.href){
+					$(this).addClass('active');
+					$(this).removeClass('disable');
+				}
+			});
+		};
+		activeVideoLink();
+
+		let removeDisabelLinkInSidebar = function () {
+			video.addEventListener('ended', function () {
+				$('.list-video .sublist li a.active').closest('li').next().find('a').removeClass('disable');
+			});
+		};
+		removeDisabelLinkInSidebar();
+
 	}
 
+	let showVideoTime = function () {
+		let videoPageGallery = document.querySelectorAll('.video-page .video-page__item video');
 
-	let setVideoTime = function () {
-		video.volume = 0.1;
+		for (let i = 0; i < videoPageGallery.length; i++){
+			var mind = videoPageGallery[i].duration % (60 * 60);
+			var minutes = Math.floor(mind / 60);
 
-		setInterval(function () {
-			let videoTime = video.currentTime;
-			localStorage.setItem(vlink, videoTime);
-		}, 1000);
-
-		video.addEventListener('pause', function () {
-			let videoTime = video.currentTime;
-			localStorage.setItem(vlink, videoTime);
-		});
-	};
-	setVideoTime();
-
-	let disableSeeking = function () {
-		let	previousTime = localStorage.getItem(vlink);
-
-		video.addEventListener('timeupdate', function (evt) {
-			if (!video.seeking) {
-				previousTime = Math.max(previousTime, video.currentTime);
-			}
-		}, false);
-
-		video.addEventListener('seeking', function (evt) {
-			if (video.currentTime > previousTime) {
-				video.currentTime = previousTime;
-			}
-		}, true);
-	};
-
-
-	let seekVideo = function () {
-		if(!$('body').hasClass('administrator')){
-			disableSeeking();
+			var secd = mind % 60;
+			var seconds = Math.ceil(secd);
+			$(videoPageGallery[i]).parent().append('<span class="video-time">'+minutes+': '+seconds+'</span>');
 		}
 	};
-	seekVideo();
-
-	let removeDisableLink = function(){
-		if($('body').hasClass('administrator')){
-			$('.list-video .sublist a').removeClass('disable');
-		}
-	};
-	// removeDisableLink();
-
-	let activeVideoLink = function () {
-		$('.list-video .sublist a').each(function () {
-			let href = $(this).attr('href');
-			if(href === location.href){
-				$(this).addClass('active');
-				$(this).removeClass('disable');
-			}
-		});
-	};
-	activeVideoLink();
-
-	let removeDisabelLinkInSidebar = function () {
-		video.addEventListener('ended', function () {
-			$('.list-video .sublist li a.active').closest('li').next().find('a').removeClass('disable');
-		});
-	};
-	removeDisabelLinkInSidebar();
+	showVideoTime();
 });

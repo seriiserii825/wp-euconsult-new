@@ -23,7 +23,10 @@
     <?php endif; ?>
 </head>
 <?php $user = wp_get_current_user()->roles; ?>
-<body <?php body_class($user); ?>>
+<?php $user_id = wp_get_current_user()->data->ID; ?>
+
+<body <?php body_class($user); ?> data-id="<?php echo $user_id; ?>">
+
 <?php if ( is_home() || is_front_page() ): ?>
     <div class="navigation" id="js-navigation">
         <div class="navigation__list">

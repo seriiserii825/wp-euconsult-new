@@ -5,6 +5,7 @@ get_header();
  */
 ?>
 
+
 <?php if (is_user_logged_in()): ?>
 	<?php
 	$user = wp_get_current_user()->roles;
@@ -35,7 +36,6 @@ get_header();
 				$video = new WP_Query([
 					'post_type' => 'video',
 					'posts_per_page' => 1,
-					'category_video' => $user_role
 				]);
 				?>
 				<?php if ($video->have_posts()): ?>
