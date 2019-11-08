@@ -252,36 +252,50 @@ $finance_gallery = new WP_Query([
         </div>
     </div>
 </section>
+
 <section class="section video-section">
     <div class="video-section__wrap">
         <header class="section__header section__header--center">
             <h2 class="section__title"><?php echo get_the_title(366); ?></h2>
         </header>
-        <div class="video-page__content" id="js-video-page__content">
-		    <?php
-		    $video = new WP_Query([
-			    'post_type' => 'video',
-			    'post_per_page' => -1
-		    ]);
-		    ?>
+        <div class="video-section__content" id="js-video-section__content">
+			<?php
+			$video = new WP_Query([
+				'post_type' => 'video',
+				'post_per_page' => -1
+			]);
+			?>
 
-		    <?php if ($video->have_posts()): ?>
-			    <?php while ($video->have_posts()): ?>
-				    <?php $video->the_post(); ?>
-                    <div class="video-page__item">
-                        <a class="video-page__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt disponibile la comandarea certificatului de instruire.</a>
-                        <video class="no-forward"  autoplay muted controlsList="nodownload" >
-                            <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
-                        </video>
-                        <div class="video-page__overlay"></div>
-                    </div>
-			    <?php endwhile; ?>
-			    <?php wp_reset_postdata(); ?>
-		    <?php else: ?>
-		    <?php endif; ?>
+			<?php if ($video->have_posts()): ?>
+                <div class="slider__arrow slider__arrow-left">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/i/svg/right-arrow.svg">
+                </div>
+                <div class="slider__arrow slider__arrow-right">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/i/svg/right-arrow.svg">
+                </div>
+
+                <div class="video-slider" id="js-video-slider">
+					<?php while ($video->have_posts()): ?>
+						<?php $video->the_post(); ?>
+                        <div class="video-section__item">
+                            <a class="video-section__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt
+                                disponibile la comandarea certificatului de instruire.</a>
+                            <video class="no-forward" autoplay muted controlsList="nodownload">
+                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>"
+                                        type="video/mp4">
+                            </video>
+                            <div class="video-section__overlay"></div>
+                        </div>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+                </div>
+			<?php endif; ?>
         </div>
+
+        <a href="<?php echo get_page_link(525); ?>" class="btn-link"><?php echo carbon_get_theme_option('crb_know_more'.get_lang()); ?></a>
     </div>
 </section>
+
 <section class="section certificate-section section-dark"
          style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
     <div class="certificate__wrap">
@@ -318,6 +332,7 @@ $finance_gallery = new WP_Query([
         </div>
     </div>
 </section>
+
 <section class="section consultation" id="js-consultation">
     <div class="consultation-wrap">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/i/consultation/consultation-bg.png" alt="">
