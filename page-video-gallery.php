@@ -22,7 +22,7 @@ get_header();
 			<?php endif; ?>
         </div>
     </section>
-    <div class="video-page__content">
+    <div class="video-page__content" id="js-video-page__content">
 		<?php
 		$video = new WP_Query([
 			'post_type' => 'video',
@@ -34,9 +34,11 @@ get_header();
 			<?php while ($video->have_posts()): ?>
 				<?php $video->the_post(); ?>
                 <div class="video-page__item">
+                    <a class="video-page__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt disponibile la comandarea certificatului de instruire.</a>
                     <video class="no-forward"  autoplay muted controlsList="nodownload" >
                         <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
                     </video>
+                    <div class="video-page__overlay"></div>
                 </div>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
@@ -44,5 +46,7 @@ get_header();
 		<?php endif; ?>
     </div>
 	<?php require_once __DIR__ . '/template-parts/connect-now.php'; ?>
+
+
 </section>
 <?php get_footer(); ?>

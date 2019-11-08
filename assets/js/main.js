@@ -410,4 +410,11 @@ jQuery(document).ready(function ($) {
 		}
 	};
 	showVideoTime();
+	
+	let showVideoItemPopup = function(){
+		$('#js-video-page__content video').on('click', function () {
+			$(this).find('.video-page__link').addClass('active');
+		});
+	};
+	showVideoItemPopup();
 });

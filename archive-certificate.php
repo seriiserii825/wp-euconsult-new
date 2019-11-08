@@ -44,9 +44,9 @@ get_header();
                         </div>
                         <div class="certificate__content">
 							<?php echo carbon_get_the_post_meta('crb_certificate_short_text'.get_lang()); ?>
+                            <a href="<?php the_permalink(); ?>" class="btn-link"><?php echo carbon_get_theme_option('crb_know_more'.get_lang()); ?></a>
                         </div>
                     </div>
-                    <a href="<?php the_permalink(); ?>" class="btn"><?php echo carbon_get_theme_option('crb_know_more'.get_lang()); ?></a>
                 </div>
 			<?php $i++; endwhile; ?>
 			<?php wp_reset_postdata(); ?>

@@ -4778,7 +4778,12 @@ p {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 20px;
-	margin-bottom: 30px;
+}
+.certificate__item-wrap .btn-link {
+	text-align: right;
+}
+.certificate__item-wrap .btn-link:hover {
+	text-decoration: none;
 }
 .certificate__item-wrap .certificate__img img {
 	display: block;
@@ -4788,6 +4793,9 @@ p {
 }
 .certificate__item-wrap.reverse .certificate__content {
 	order: 2;
+}
+.certificate__item-wrap.reverse .btn-link {
+	text-align: left;
 }
 .certificate__content {
 	font-family: 'Helvetica Light', sans-serif;
@@ -4816,13 +4824,15 @@ p {
 	border-radius: 50%;
 	background: #fccc1c;
 }
-.certificate .btn {
-	display: table;
-	margin: 0 auto;
-	text-align: center;
-	height: 40px;
-	line-height: 40px;
-	transition: all .4s;
+.certificate .btn-link {
+	position: relative;
+	top: 8px;
+	left: 4px;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: underline;
+	letter-spacing: 1.2px;
+	color: #3D9BE9;
 }
 .certificate .btn:hover {
 	background: #245786;
@@ -4862,7 +4872,7 @@ p {
 }
 .certificate-section__img {
 	margin: 0 auto;
-	max-width: 600px;
+	max-width: 400px;
 }
 
 .certificate-section__img a {
@@ -4875,6 +4885,8 @@ p {
 .certificate-section {
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-top: 20px;
+	padding-bottom: 25px;
 }
 .certificate-section .slider__arrow {
 	top: 40%;
@@ -4885,6 +4897,9 @@ p {
 }
 .list-video .sublist a.active {
 	color: red;
+}
+.video-page {
+	background: #f2f2f2;
 }
 .video-page__content {
 	display: grid;
@@ -4898,10 +4913,21 @@ p {
 	position: relative;
 }
 
+.video-page__item:hover {
+	cursor: pointer;
+}
+
 .video-page__item video {
+	position: relative;
 	width: 100%;
 	height: 152px;
+	z-index: 1;
 }
+.video-page__item {
+	position: relative;
+}
+
+
 .video-time {
 	position: absolute;
 	bottom: 10px;
@@ -4909,6 +4935,43 @@ p {
 	font-weight: bold;
 	color: white;
 }
+.video-page__link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	text-align: center;
+	font-weight: bold;
+	color: yellow;
+	transition: all .3s;
+	z-index: 3;
+}
+.video-page__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 152px;
+	background: rgba(0,0,0,.8);
+	z-index: 2;
+	transition: all .2s;
+	opacity: 0;
+}
+
+.video-page__item:hover {
+	cursor: pointer;
+}
+.video-page__item:hover .video-page__link {
+	transform: translate(-50%, -50%) scale(1);
+	color: yellow;
+}
+
+.video-page__item:hover .video-page__overlay {
+	display: block;
+	opacity: 1;
+}
+
+
 .examen-page__content {
 	margin: 40px auto;
 	padding: 40px 15px;
@@ -4941,5 +5004,8 @@ p {
 .examen-page__content .form-group input[type="radio"] {
 	margin-right: 10px;
 	cursor: pointer;
+}
+.video-section {
+	background: #f2f2f2;
 }
 

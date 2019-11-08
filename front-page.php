@@ -257,6 +257,29 @@ $finance_gallery = new WP_Query([
         <header class="section__header section__header--center">
             <h2 class="section__title"><?php echo get_the_title(366); ?></h2>
         </header>
+        <div class="video-page__content" id="js-video-page__content">
+		    <?php
+		    $video = new WP_Query([
+			    'post_type' => 'video',
+			    'post_per_page' => -1
+		    ]);
+		    ?>
+
+		    <?php if ($video->have_posts()): ?>
+			    <?php while ($video->have_posts()): ?>
+				    <?php $video->the_post(); ?>
+                    <div class="video-page__item">
+                        <a class="video-page__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt disponibile la comandarea certificatului de instruire.</a>
+                        <video class="no-forward"  autoplay muted controlsList="nodownload" >
+                            <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
+                        </video>
+                        <div class="video-page__overlay"></div>
+                    </div>
+			    <?php endwhile; ?>
+			    <?php wp_reset_postdata(); ?>
+		    <?php else: ?>
+		    <?php endif; ?>
+        </div>
     </div>
 </section>
 <section class="section certificate-section section-dark"
