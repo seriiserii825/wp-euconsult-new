@@ -4875,6 +4875,21 @@ p {
 	max-width: 1083px;
 	z-index: 4;
 }
+.certificate__inner .slick-dots {
+	bottom: -38px;
+}
+.certificate__inner .slick-dots li {
+	margin-right: 22px;
+	width: 10px;
+	height: 10px;
+	background: #999997;
+	border: none;
+}
+.certificate__inner .slick-dots li.slick-active {
+	border: 2px solid #999997;
+	background: transparent;
+}
+
 .certificate-section__img {
 	margin: 0 auto;
 	max-width: 400px;
@@ -4891,7 +4906,7 @@ p {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 20px;
-	padding-bottom: 25px;
+	padding-bottom: 60px;
 }
 .certificate-section .slider__arrow {
 	top: 40%;

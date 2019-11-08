@@ -295,6 +295,7 @@ jQuery(document).ready(function ($) {
 	let certificateSlider = function () {
 		$('#js-certificate__slider').slick({
 			arrows: false,
+			dots: true
 		});
 
 		$('.certificate-section .slider__arrow-right').on('click', function (e) {
