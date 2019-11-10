@@ -92,74 +92,79 @@ jQuery(document).ready(function ($) {
 	sandwitch();
 
 	let navigation = function () {
+		$('.dark-scroll').each(function () {
+			console.log($(this));
 
-		if ($("#js-reimbursabile").length > 0 && $("#js-partners").length > 0 && $("#js-consultation").length > 0) {
-			let navigation = $('#js-navigation');
-			let reimbursabile = $("#js-reimbursabile");
-			let history = $("#js-history");
-			let partners = $("#js-partners");
-			let consultation = $("#js-consultation");
-			let contacts = $("#js-footer");
-
-			$(document).on('scroll', function () {
-				if (
-					(navigation.offset().top > reimbursabile.offset().top && navigation.offset().top < (reimbursabile.offset().top + reimbursabile.innerHeight())) ||
-					(navigation.offset().top > history.offset().top && navigation.offset().top < (history.offset().top + history.innerHeight())) ||
-					(navigation.offset().top > partners.offset().top && navigation.offset().top < (partners.offset().top + partners.innerHeight())) ||
-					(navigation.offset().top > consultation.offset().top && navigation.offset().top < (consultation.offset().top + consultation.innerHeight()))
-				) {
-					if (!navigation.hasClass('light')) {
-						navigation.addClass('light');
-					}
-				} else {
-					navigation.removeClass('light');
-				}
-
-				if (
-					(navigation.offset().top > reimbursabile.offset().top && navigation.offset().top < (reimbursabile.offset().top + reimbursabile.innerHeight()))
-				) {
-					let iranbursabileA = $('#js-navigation a[href="#js-reimbursabile"]');
-					if (!iranbursabileA.hasClass('active')) {
-						iranbursabileA.addClass('active');
-						iranbursabileA.parent().addClass('active');
-					}
-					iranbursabileA.addClass('active');
-				} else if ((navigation.offset().top > history.offset().top && navigation.offset().top < (history.offset().top + history.innerHeight()))) {
-					let iranbursabileA = $('#js-navigation a[href="#js-history"]');
-					if (!iranbursabileA.hasClass('active')) {
-						iranbursabileA.addClass('active');
-						iranbursabileA.parent().addClass('active');
-					}
-					iranbursabileA.addClass('active');
-				} else if ((navigation.offset().top > contacts.offset().top && navigation.offset().top < (contacts.offset().top + contacts.innerHeight()))) {
-					let iranbursabileA = $('#js-navigation a[href="#js-footer"]');
-					if (!iranbursabileA.hasClass('active')) {
-						iranbursabileA.addClass('active');
-						iranbursabileA.parent().addClass('active');
-					}
-					iranbursabileA.addClass('active');
-				} else {
-					$('#js-navigation a').removeClass('active');
-					$('#js-navigation a').parent().removeClass('active');
-				}
+		});
 
 
-			});
-
-
-			$('#js-navigation a').on('click', function (event) {
-				let target = $($(this).attr('href'));
-
-				if (target.length) {
-					event.preventDefault();
-					$('html, body').animate({
-						scrollTop: target.offset().top
-					}, 1000);
-				}
-			});
-
-		}
-
+		// if ($("#js-reimbursabile").length > 0 && $("#js-partners").length > 0 && $("#js-consultation").length > 0) {
+		// 	let navigation = $('#js-navigation');
+		// 	let reimbursabile = $("#js-reimbursabile");
+		// 	let history = $("#js-history");
+		// 	let partners = $("#js-partners");
+		// 	let consultation = $("#js-consultation");
+		// 	let contacts = $("#js-footer");
+		//
+		// 	$(document).on('scroll', function () {
+		// 		if (
+		// 			(navigation.offset().top > reimbursabile.offset().top && navigation.offset().top < (reimbursabile.offset().top + reimbursabile.innerHeight())) ||
+		// 			(navigation.offset().top > history.offset().top && navigation.offset().top < (history.offset().top + history.innerHeight())) ||
+		// 			(navigation.offset().top > partners.offset().top && navigation.offset().top < (partners.offset().top + partners.innerHeight())) ||
+		// 			(navigation.offset().top > consultation.offset().top && navigation.offset().top < (consultation.offset().top + consultation.innerHeight()))
+		// 		) {
+		// 			if (!navigation.hasClass('light')) {
+		// 				navigation.addClass('light');
+		// 			}
+		// 		} else {
+		// 			navigation.removeClass('light');
+		// 		}
+		//
+		// 		if (
+		// 			(navigation.offset().top > reimbursabile.offset().top && navigation.offset().top < (reimbursabile.offset().top + reimbursabile.innerHeight()))
+		// 		) {
+		// 			let iranbursabileA = $('#js-navigation a[href="#js-reimbursabile"]');
+		// 			if (!iranbursabileA.hasClass('active')) {
+		// 				iranbursabileA.addClass('active');
+		// 				iranbursabileA.parent().addClass('active');
+		// 			}
+		// 			iranbursabileA.addClass('active');
+		// 		} else if ((navigation.offset().top > history.offset().top && navigation.offset().top < (history.offset().top + history.innerHeight()))) {
+		// 			let iranbursabileA = $('#js-navigation a[href="#js-history"]');
+		// 			if (!iranbursabileA.hasClass('active')) {
+		// 				iranbursabileA.addClass('active');
+		// 				iranbursabileA.parent().addClass('active');
+		// 			}
+		// 			iranbursabileA.addClass('active');
+		// 		} else if ((navigation.offset().top > contacts.offset().top && navigation.offset().top < (contacts.offset().top + contacts.innerHeight()))) {
+		// 			let iranbursabileA = $('#js-navigation a[href="#js-footer"]');
+		// 			if (!iranbursabileA.hasClass('active')) {
+		// 				iranbursabileA.addClass('active');
+		// 				iranbursabileA.parent().addClass('active');
+		// 			}
+		// 			iranbursabileA.addClass('active');
+		// 		} else {
+		// 			$('#js-navigation a').removeClass('active');
+		// 			$('#js-navigation a').parent().removeClass('active');
+		// 		}
+		//
+		//
+		// 	});
+		//
+		//
+		// 	$('#js-navigation a').on('click', function (event) {
+		// 		let target = $($(this).attr('href'));
+		//
+		// 		if (target.length) {
+		// 			event.preventDefault();
+		// 			$('html, body').animate({
+		// 				scrollTop: target.offset().top
+		// 			}, 1000);
+		// 		}
+		// 	});
+		//
+		// }
+		//
 	};
 	navigation();
 

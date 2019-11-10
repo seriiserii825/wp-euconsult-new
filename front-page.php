@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="index-intro fullscreen-bg" id="js-index-intro">
+<div class="dark-scroll index-intro fullscreen-bg" id="js-index-intro">
     <div class="overlay"></div>
     <div class="index-intro-content">
         <!--        blocks/index-intro-->
@@ -54,6 +54,7 @@
 <?php $finance_block = new WP_Query('page_id=15'); ?>
 
 <?php if ($finance_block->have_posts()): ?><?php $finance_block->the_post(); ?>
+
     <section class="section reimbursabile" id="js-reimbursabile">
         <div class="reimbursabile-wrap">
             <header class="section__header">
@@ -63,7 +64,9 @@
             <div class="btn"><?php echo carbon_get_theme_option('crb_btn_services' . get_lang()); ?></div>
         </div>
     </section>
+
 <?php else: ?><?php endif; ?>
+
 <?php wp_reset_postdata(); ?>
 
 <?php
@@ -76,7 +79,7 @@ $finance_gallery = new WP_Query([
 ?>
 
 <?php if ($finance_gallery->have_posts()): ?>
-    <section class="finance-gallery section section-dark" id="js-finance-gallery"
+    <section class="dark-scroll finance-gallery section section-dark" id="js-finance-gallery"
              style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
         <div class="finance-gallery-wrap">
 			<?php while ($finance_gallery->have_posts()): ?><?php $finance_gallery->the_post(); ?>
@@ -143,7 +146,7 @@ $finance_gallery = new WP_Query([
         </div>
     </div>
 </section>
-<section class="numbers section section-dark"
+<section class="dark-scroll numbers section section-dark"
          style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
 	<?php $numbers = carbon_get_theme_option('crb_numbers_fields'); ?>
     <div class="numbers__content">
@@ -182,7 +185,7 @@ $finance_gallery = new WP_Query([
         </div>
     </div>
 </section>
-<section class="section idea section-dark"
+<section class="dark-scroll section idea section-dark"
          style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
     <div class="idea__wrap">
         <header class="section__header section__header--center">
@@ -296,7 +299,7 @@ $finance_gallery = new WP_Query([
     </div>
 </section>
 
-<section class="section certificate-section section-dark"
+<section class="dark-scroll section certificate-section section-dark"
          style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
     <div class="certificate__wrap">
         <header class="section__header section__header--center">
