@@ -1,4 +1,4 @@
-<footer class="dark-scroll footer section-dark" id="js-footer"
+<footer class="section-highlight dark-scroll footer section-dark" id="js-footer"
         style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/footer-bg.jpg')">
     <header class="section__header section__header--center">
         <h2 class="section__title"><?php echo carbon_get_theme_option('crb_footer_title' . get_lang()); ?></h2>

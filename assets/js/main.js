@@ -93,70 +93,116 @@ jQuery(document).ready(function ($) {
 
 	let navigation = function () {
 		if ($('body').hasClass('page-template-front-page')) {
-			let navigation = $('#js-navigation');
+			const navigation = document.querySelector('#js-navigation');
+			const sections = document.querySelectorAll('.section-highlight ');
+			let navigationLink = document.querySelectorAll('#js-navigation a');
 
-			let dark0 = $('.dark-scroll').eq(0);
-			let dark0OfsetTop = dark0.offset().top;
-			let dark0height = dark0.innerHeight();
+			function onScroll() {
+				const nRect = navigation.getBoundingClientRect();
 
-			let dark1 = $('.dark-scroll').eq(1);
-			let dark1OfsetTop = dark1.offset().top;
-			let dark1height = dark1.innerHeight();
+				for (let i = 0; i < sections.length; i++) {
+					const section = sections[i];
+					const sRect = section.getBoundingClientRect();
 
-			let dark2 = $('.dark-scroll').eq(2);
-			let dark2OfsetTop = dark2.offset().top;
-			let dark2height = dark2.innerHeight();
 
-			let dark3 = $('.dark-scroll').eq(3);
-			let dark3OfsetTop = dark3.offset().top;
-			let dark3height = dark3.innerHeight();
+					if (sRect.top < nRect.bottom && sRect.bottom > nRect.bottom) {
+						const isDark = section.classList.contains('dark-scroll');
 
-			let dark4 = $('.dark-scroll').eq(4);
-			let dark4OfsetTop = dark4.offset().top;
-			let dark4height = dark4.innerHeight();
+						let sectionId = section.id;
+						console.log(sectionId);
 
-			let dark5 = $('.dark-scroll').eq(5);
-			let dark5OfsetTop = dark5.offset().top;
-			let dark5height = dark5.innerHeight();
+						for (let i = 0; i < navigationLink.length; i++) {
+							linkHref = navigationLink[i].href;
 
-			// console.log($('#js-video'));
-			// console.log($('#js-video').offset().top);
-			// console.log($('#js-video').innerHeight());
-			console.log(dark4);
-			console.log(dark4OfsetTop);
-			console.log(dark5);
-			console.log(dark5OfsetTop);
+							if(linkHref.indexOf(sectionId) >= 0){
+								if(!navigationLink[i].classList.contains('active')){
+									navigationLink[i].classList.add('active');
+								}
+							}else{
+								navigationLink[i].classList.remove('active');
+							}
+						}
 
-			$(document).on('scroll', function () {
-				let doc = $(this);
-				let docScrollTop = doc.scrollTop();
-
-				if(docScrollTop > dark0OfsetTop && docScrollTop < (dark0height + dark0OfsetTop)){
-					if(navigation.hasClass('light')){
-						navigation.removeClass('light');
-					}
-				}else if(docScrollTop > dark1OfsetTop && docScrollTop < (dark1height + dark1OfsetTop)){
-					if(navigation.hasClass('light')){
-						navigation.removeClass('light');
-					}
-				}else if(docScrollTop > dark2OfsetTop && docScrollTop < (dark2height + dark2OfsetTop)){
-					if(navigation.hasClass('light')){
-						navigation.removeClass('light');
-					}
-				}else if(docScrollTop > dark3OfsetTop && docScrollTop < (dark3height + dark3OfsetTop)){
-					if(navigation.hasClass('light')){
-						navigation.removeClass('light');
-					}
-				}else if(docScrollTop > dark4OfsetTop && docScrollTop < (dark4height + dark4OfsetTop)){
-					if(navigation.hasClass('light')){
-						navigation.removeClass('light');
-					}
-				}else{
-					if(!navigation.hasClass('light')){
-						navigation.addClass('light');
+						navigation.classList.toggle('light', !isDark);
+						break;
 					}
 				}
-			});
+			}
+
+			window.addEventListener('scroll', onScroll);
+			onScroll();
+
+			// 			let iranbursabileA = $('#js-navigation a[href="#js-reimbursabile"]');
+			// 			if (!iranbursabileA.hasClass('active')) {
+			// 				iranbursabileA.addClass('active');
+			// 				iranbursabileA.parent().addClass('active');
+			// 			}
+			// 			iranbursabileA.addClass('active');
+
+			// let navigation = $('#js-navigation');
+			//
+			// let dark0 = $('.dark-scroll').eq(0);
+			// let dark0OfsetTop = dark0.offset().top;
+			// let dark0height = dark0.innerHeight();
+			//
+			// let dark1 = $('.dark-scroll').eq(1);
+			// let dark1OfsetTop = dark1.offset().top;
+			// let dark1height = dark1.innerHeight();
+			//
+			// let dark2 = $('.dark-scroll').eq(2);
+			// let dark2OfsetTop = dark2.offset().top;
+			// let dark2height = dark2.innerHeight();
+			//
+			// let dark3 = $('.dark-scroll').eq(3);
+			// let dark3OfsetTop = dark3.offset().top;
+			// let dark3height = dark3.innerHeight();
+			//
+			// let dark4 = $('.dark-scroll').eq(4);
+			// let dark4OfsetTop = dark4.offset().top;
+			// let dark4height = dark4.innerHeight();
+			//
+			// let dark5 = $('.dark-scroll').eq(5);
+			// let dark5OfsetTop = dark5.offset().top;
+			// let dark5height = dark5.innerHeight();
+			//
+			// // console.log($('#js-video'));
+			// // console.log($('#js-video').offset().top);
+			// // console.log($('#js-video').innerHeight());
+			// console.log(dark4);
+			// console.log(dark4OfsetTop);
+			// console.log(dark5);
+			// console.log(dark5OfsetTop);
+			//
+			// $(document).on('scroll', function () {
+			// 	let doc = $(this);
+			// 	let docScrollTop = doc.scrollTop();
+			//
+			// 	if(docScrollTop > dark0OfsetTop && docScrollTop < (dark0height + dark0OfsetTop)){
+			// 		if(navigation.hasClass('light')){
+			// 			navigation.removeClass('light');
+			// 		}
+			// 	}else if(docScrollTop > dark1OfsetTop && docScrollTop < (dark1height + dark1OfsetTop)){
+			// 		if(navigation.hasClass('light')){
+			// 			navigation.removeClass('light');
+			// 		}
+			// 	}else if(docScrollTop > dark2OfsetTop && docScrollTop < (dark2height + dark2OfsetTop)){
+			// 		if(navigation.hasClass('light')){
+			// 			navigation.removeClass('light');
+			// 		}
+			// 	}else if(docScrollTop > dark3OfsetTop && docScrollTop < (dark3height + dark3OfsetTop)){
+			// 		if(navigation.hasClass('light')){
+			// 			navigation.removeClass('light');
+			// 		}
+			// 	}else if(docScrollTop > dark4OfsetTop && docScrollTop < (dark4height + dark4OfsetTop)){
+			// 		if(navigation.hasClass('light')){
+			// 			navigation.removeClass('light');
+			// 		}
+			// 	}else{
+			// 		if(!navigation.hasClass('light')){
+			// 			navigation.addClass('light');
+			// 		}
+			// 	}
+			// });
 
 		}
 
