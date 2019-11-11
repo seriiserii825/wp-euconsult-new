@@ -256,7 +256,7 @@ $finance_gallery = new WP_Query([
     </div>
 </section>
 
-<section class="section video-section">
+<section class="section video-section" id="js-video">
     <div class="video-section__wrap">
         <header class="section__header section__header--center">
             <h2 class="section__title"><?php echo get_the_title(366); ?></h2>

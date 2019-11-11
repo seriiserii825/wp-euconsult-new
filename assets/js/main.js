@@ -94,29 +94,70 @@ jQuery(document).ready(function ($) {
 	let navigation = function () {
 		if ($('body').hasClass('page-template-front-page')) {
 			let navigation = $('#js-navigation');
-			let navigationOffsetTop = navigation.offset().top;
 
-			$('.dark-scroll').each(function (index) {
-				let elemItem = $(this);
-				let elemOffsetTop = elemItem.offset().top - navigationOffsetTop;
-				let elemHeight = elemOffsetTop + elemItem.innerHeight();
+			let dark0 = $('.dark-scroll').eq(0);
+			let dark0OfsetTop = dark0.offset().top;
+			let dark0height = dark0.innerHeight();
 
-				if (index === 0) {
-					$(document).on('scroll', function () {
-						if ($(this).scrollTop() > elemOffsetTop && $(this).scrollTop() < (elemHeight - navigationOffsetTop)) {
-							console.log('in');
-							if (navigation.hasClass('light')) {
-								navigation.removeClass('light');
-							}
-						} else {
-							console.log('out');
-							if (!navigation.hasClass('light')) {
-								navigation.addClass('light');
-							}
-						}
-					});
+			let dark1 = $('.dark-scroll').eq(1);
+			let dark1OfsetTop = dark1.offset().top;
+			let dark1height = dark1.innerHeight();
+
+			let dark2 = $('.dark-scroll').eq(2);
+			let dark2OfsetTop = dark2.offset().top;
+			let dark2height = dark2.innerHeight();
+
+			let dark3 = $('.dark-scroll').eq(3);
+			let dark3OfsetTop = dark3.offset().top;
+			let dark3height = dark3.innerHeight();
+
+			let dark4 = $('.dark-scroll').eq(4);
+			let dark4OfsetTop = dark4.offset().top;
+			let dark4height = dark4.innerHeight();
+
+			let dark5 = $('.dark-scroll').eq(5);
+			let dark5OfsetTop = dark5.offset().top;
+			let dark5height = dark5.innerHeight();
+
+			// console.log($('#js-video'));
+			// console.log($('#js-video').offset().top);
+			// console.log($('#js-video').innerHeight());
+			console.log(dark4);
+			console.log(dark4OfsetTop);
+			console.log(dark5);
+			console.log(dark5OfsetTop);
+
+			$(document).on('scroll', function () {
+				let doc = $(this);
+				let docScrollTop = doc.scrollTop();
+
+				if(docScrollTop > dark0OfsetTop && docScrollTop < (dark0height + dark0OfsetTop)){
+					if(navigation.hasClass('light')){
+						navigation.removeClass('light');
+					}
+				}else if(docScrollTop > dark1OfsetTop && docScrollTop < (dark1height + dark1OfsetTop)){
+					if(navigation.hasClass('light')){
+						navigation.removeClass('light');
+					}
+				}else if(docScrollTop > dark2OfsetTop && docScrollTop < (dark2height + dark2OfsetTop)){
+					if(navigation.hasClass('light')){
+						navigation.removeClass('light');
+					}
+				}else if(docScrollTop > dark3OfsetTop && docScrollTop < (dark3height + dark3OfsetTop)){
+					if(navigation.hasClass('light')){
+						navigation.removeClass('light');
+					}
+				}else if(docScrollTop > dark4OfsetTop && docScrollTop < (dark4height + dark4OfsetTop)){
+					if(navigation.hasClass('light')){
+						navigation.removeClass('light');
+					}
+				}else{
+					if(!navigation.hasClass('light')){
+						navigation.addClass('light');
+					}
 				}
 			});
+
 		}
 
 		// if ($("#js-reimbursabile").length > 0 && $("#js-partners").length > 0 && $("#js-consultation").length > 0) {
