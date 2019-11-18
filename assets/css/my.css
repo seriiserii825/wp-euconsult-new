@@ -910,7 +910,7 @@ p {
 @media screen and (max-width: 500px) {
 	.wpglobus-lang {
 		position: absolute;
-		top: 90px;
+		top: 70px;
 		left: 50%;
 		transform: translateX(-50%);
 		margin-left: 0;
@@ -957,7 +957,7 @@ p {
 
 .header {
 	padding: 3px 0;
-	background: white;
+	background: #fbfbfb;
 }
 
 .header__content {
@@ -1352,7 +1352,7 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: white;
+	background: #f8f8f8;
 	cursor: pointer;
 }
 
