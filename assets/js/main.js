@@ -626,6 +626,6 @@ jQuery(document).ready(function ($) {
 
 		preventSelection(document);
 	};
-	denied();
+	// denied();
 });
 
