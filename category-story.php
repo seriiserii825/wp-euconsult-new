@@ -27,19 +27,7 @@
 				<div class="history-succes__text">
 					<?php the_content(); ?>
 				</div>
-<!--				<div class="history-succes__reviews">-->
-<!--					<div class="history-succes__reviews-text">--><?php //echo carbon_get_the_post_meta('crb_reviews_cite'.get_lang()); ?><!--</div>-->
-<!--					<div class="history__author">-->
-<!--						<div class="history__img">-->
-<!--							--><?php //if(has_post_thumbnail()): ?>
-<!--								--><?php //the_post_thumbnail('full'); ?>
-<!--							--><?php //endif; ?>
-<!--						</div>-->
-<!--						<div class="history__name">--><?php //echo carbon_get_the_post_meta('crb_reviews_title'.get_lang()); ?><!--</div>-->
-<!--					</div>-->
-<!--				</div>-->
 			</div>
-		
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 	<?php else: ?>

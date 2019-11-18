@@ -2649,7 +2649,7 @@ p {
 
 .history-succes__text p {
 	margin-bottom: 10px;
-	font-family: 'Helvetica Light', sans-serif;
+	/*font-family: 'Helvetica Light', sans-serif;*/
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: -0.3px;
@@ -2689,7 +2689,7 @@ p {
 }
 
 .history-succes__text h6 strong {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	color: #3078BE;
 }
 
