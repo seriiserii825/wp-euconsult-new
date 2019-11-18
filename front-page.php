@@ -48,7 +48,7 @@
     <video class="fullscreen-bg__video" loop="" muted="" autoplay=""
            poster="<?php echo get_template_directory_uri(); ?>/assets/i/intro-video.jpg">
         <source src="<?php echo get_template_directory_uri(); ?>/assets/video/intro-video.mp4" type="video/mp4">
-        <source src="<?php echo get_template_directory_uri(); ?>/assets/video/intro-video.webm" type="video/webm">
+        <source src="<?php echo get_template_directory_uri(); ?>/assets/video/intro-video.ogg" type="video/ogg">
     </video>
 </div>
 <?php $finance_block = new WP_Query('page_id=15'); ?>
@@ -263,7 +263,7 @@ $finance_gallery = new WP_Query([
 			<?php
 			$video = new WP_Query([
 				'post_type' => 'video',
-				'post_per_page' => -1
+				'posts_per_page' => 4
 			]);
 			?>
 
@@ -274,19 +274,20 @@ $finance_gallery = new WP_Query([
                 <div class="slider__arrow slider__arrow-right">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/i/svg/right-arrow.svg">
                 </div>
-
+                <?php $count = 0; ?>
                 <div class="video-slider" id="js-video-slider">
 					<?php while ($video->have_posts()): ?>
 						<?php $video->the_post(); ?>
                         <div class="video-section__item">
                             <a class="video-section__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt
                                 disponibile la comandarea certificatului de instruire.</a>
-                            <video class="no-forward" autoplay muted controlsList="nodownload">
-                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>"
-                                        type="video/mp4">
+                            <video class="no-forward" autoplay muted >
+                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.mp4" type="video/mp4">
+                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.ogg" type="video/ogg">
                             </video>
                             <div class="video-section__overlay"></div>
                         </div>
+                    <?php $count++; ?>
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>
                 </div>
@@ -296,6 +297,7 @@ $finance_gallery = new WP_Query([
         <a href="<?php echo get_page_link(525); ?>" class="btn-link"><?php echo carbon_get_theme_option('crb_know_more'.get_lang()); ?></a>
     </div>
 </section>
+<?php //vardump($count); ?>
 
 <section class="section-highlight dark-scroll section certificate-section section-dark" id="js-certificates" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
     <div class="certificate__wrap">

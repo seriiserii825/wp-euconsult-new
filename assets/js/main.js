@@ -540,7 +540,7 @@ jQuery(document).ready(function ($) {
 			dots: true,
 			arrows: false,
 			slidesToShow: 4,
-			slidesToScroll: 4,
+			slidesToScroll: 1,
 			responsive: [
 				{
 					breakpoint: 1300,

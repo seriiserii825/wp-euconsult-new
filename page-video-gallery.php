@@ -36,7 +36,8 @@ get_header();
                 <div class="video-page__item">
                     <a class="video-page__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt disponibile la comandarea certificatului de instruire.</a>
                     <video class="no-forward"  autoplay muted controlsList="nodownload" >
-                        <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
+                        <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.mp4" type="video/mp4">
+                        <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.ogg" type="video/ogg">
                     </video>
                     <div class="video-page__overlay"></div>
                 </div>

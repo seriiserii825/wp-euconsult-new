@@ -977,7 +977,7 @@ p {
 
 .main-menu {
 	display: flex;
-	margin-left: 40px;
+	margin-left: 24px;
 }
 
 .main-menu.active {
@@ -1018,7 +1018,7 @@ p {
 }
 
 .main-menu li {
-	margin-right: 16px;
+	margin-right: 14px;
 }
 
 .main-menu li.current-menu-item a {
@@ -1030,8 +1030,9 @@ p {
 }
 
 .main-menu a {
-	font-family: 'Helvetica Bold', sans-serif;
-	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
 	color: #1A2B6D;
 }
 
@@ -3861,7 +3862,7 @@ p {
 
 .header__content .logo a {
 	display: inline-block;
-	width: 212px;
+	width: 154px;
 }
 
 .finance-country .our-services__title {
@@ -5124,4 +5125,10 @@ p {
 .video-section__item:hover .video-section__overlay {
 	display: block;
 	opacity: 1;
+}
+#js-video {
+	/*display: none;*/
+}
+#js-certificates {
+	/*display: none;*/
 }
