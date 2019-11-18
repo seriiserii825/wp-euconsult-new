@@ -1,39 +1,41 @@
-<div class="form-group">
-    <div class="user__name">[text* your-name placeholder "Numele"]</div>
-    <div class="user__email">[email* your-email placeholder "Email"]</div>
-</div>
-<div class="form-group">
-    <div class="question">Va placut cursul?</div>
-    <div class="answer">
-        [radio radio-41 use_label_element default:1 "da"]
-        [radio radio-41 use_label_element default:1 "nu"]
-        [radio radio-41 use_label_element default:1 "nu stiu"]
-    </div>
-</div>
-<div class="form-group">
-    <div class="question">Cite ori v-ati uitat la un video?</div>
-    <div class="answer">
-        [radio radio-42 use_label_element default:1 "1"]
-        [radio radio-42 use_label_element default:1 "2"]
-        [radio radio-42 use_label_element default:1 "mai mult de 2"]
-    </div>
-</div>
-<div class="form-group">
-    <div class="question">Cit timp ati invatat?</div>
-    <div class="answer">
-        [radio radio-43 use_label_element default:1 "10"]
-        [radio radio-43 use_label_element default:1 "20"]
-        [radio radio-43 use_label_element default:1 "o luna"]
-    </div>
-</div>
-<div class="form-group">
-    <div class="question">Doriti sa inavatati si alt curs?</div>
-    <div class="answer">
-        [radio radio-44 use_label_element default:1 "nu"]
-        [radio radio-44 use_label_element default:1 "da"]
-        [radio radio-44 use_label_element default:1 "nu stiu"]
-    </div>
-</div>
-<div class="examen-submit-btn">
-    [submit "Trimite"]
-</div>
+<script>
+	//запрещает нажатие правой кнопки мыши на сайте
+	document.oncontextmenu = cmenu; function cmenu() { return false; }
+</script>
+
+
+<script>
+	//запрещает выделение мышкой и комбинации клавиш Ctrl + A и Ctrl + U и Ctrl + S
+	function preventSelection(element){
+		var preventSelection = false;
+		function addHandler(element, event, handler){
+			if (element.attachEvent) element.attachEvent('on' + event, handler);
+			else if (element.addEventListener) element.addEventListener(event, handler, false); }
+		function removeSelection(){
+			if (window.getSelection) { window.getSelection().removeAllRanges(); }
+			else if (document.selection && document.selection.clear)
+				document.selection.clear();
+		}
+
+//запрещаем выделять текст мышкой
+		addHandler(element, 'mousemove', function(){ if(preventSelection) removeSelection(); });
+		addHandler(element, 'mousedown', function(event){ var event = event || window.event; var sender = event.target || event.srcElement; preventSelection = !sender.tagName.match(/INPUT|TEXTAREA/i) ;});
+
+//запрещаем нажатие клавищ Ctrl + A и Ctrl + U и Ctrl + S
+		function killCtrlA(event){
+			var event = event || window.event;
+			var sender = event.target || event.srcElement;
+			if (sender.tagName.match(/INPUT|TEXTAREA/i)) return;
+			var key = event.keyCode || event.which;
+			if ((event.ctrlKey && key == 'U'.charCodeAt(0)) || (event.ctrlKey && key == 'A'.charCodeAt(0)) || (event.ctrlKey && key == 'S'.charCodeAt(0))) // 'A'.charCodeAt(0) можно заменить на 65
+			{ removeSelection();
+				if (event.preventDefault) event.preventDefault();
+				else event.returnValue = false;}}
+		addHandler(element, 'keydown', killCtrlA);
+		addHandler(element, 'keyup', killCtrlA);
+	}
+	preventSelection(document);
+</script>
+
+
+</body>
