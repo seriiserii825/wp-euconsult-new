@@ -3,6 +3,7 @@
 		margin-right: 0;
 		padding: 14px 0;
 	}
+
 	.main-menu li:last-child {
 		margin-right: 0;
 	}
@@ -14,6 +15,7 @@
 	.video-section__content .slider__arrow-left {
 		left: -40px;
 	}
+
 	.video-section__content .slider__arrow-right {
 		right: -40px;
 	}
@@ -33,6 +35,7 @@
 		max-width: 880px;
 	}
 }
+
 @media screen and (max-width: 1000px) {
 	.video-section__content {
 		max-width: 700px;
@@ -43,14 +46,17 @@
 	.certificate__item-wrap {
 		display: block;
 	}
+
 	.certificate__img {
 		margin-bottom: 30px;
 	}
+
 	.finance-single__container video {
 		display: table;
 		margin: 0 auto 40px;
 		width: 100%;
 	}
+
 	.single-idea__container::before, .single-idea__container::after {
 		left: 5px;
 		width: 30px;
@@ -62,10 +68,12 @@
 		max-width: 600px;
 	}
 }
+
 @media screen and (max-width: 830px) {
 	.history-arrow svg {
 		width: 38px;
 	}
+
 	.history__text {
 		margin-bottom: 20px;
 		max-width: 500px;
@@ -76,6 +84,7 @@
 		max-width: 590px;
 	}
 }
+
 @media screen and (max-width: 790px) {
 	.video-section__content {
 		max-width: 280px;
@@ -84,54 +93,81 @@
 	.video-section__content .slider__arrow-left {
 		left: -40px;
 	}
+
 	.video-section__content .slider__arrow-right {
 		right: -40px;
 	}
 
+	.popup h1 {
+		position: relative;
+		left: -50px;
+		font-size: 30px;
+	}
+	.popup .close_popup {
+		right: 60px;
+	}
 }
 
 @media screen and (max-width: 600px) {
 	.history__text {
 		max-width: 300px;
 	}
+
 	.reimbursabile__content {
 		margin: 0 auto 20px;
 		max-width: 300px;
 	}
+
 	.news__content {
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+
+	.news__item.mix .news__short-text {
+		display: none;
+	}
+
+	.news__item.mix .news__item-footer {
+		padding: 0;
 	}
 
 	.video-page__content {
 		display: block;
 		max-width: 280px;
 	}
+
 	.partners .slick-slide img {
 		width: 280px;
 		height: auto;
 	}
+
 	.partners .slick-slide a {
 		height: auto;
 	}
+
 	.partners__img {
 		align-items: center;
 	}
+
 	.page-about__connect-now .connect-now {
 		left: 0;
 	}
 }
+
 @media screen and (max-width: 560px) {
 	.idea__slide {
 		max-width: 300px;
 	}
+
 	.idea .slider__arrow {
 		width: 46px;
 	}
+
 	.certificate__title {
 		font-size: 24px;
 	}
 }
+
 @media screen and (max-width: 500px) {
 	.header__content .logo a {
 		position: relative;
@@ -143,6 +179,12 @@
 	.certificate-section__img {
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+
+	.popup h1 {
+		position: static;
+		margin-bottom: 15px;
+		font-size: 26px;
 	}
 }
 
@@ -165,9 +207,11 @@
 	.video-section__content {
 		max-width: 260px;
 	}
+
 	.video-section__content .slider__arrow-left {
 		display: none;
 	}
+
 	.video-section__content .slider__arrow-right {
 		display: none;
 	}
