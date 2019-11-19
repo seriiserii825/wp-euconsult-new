@@ -26,6 +26,22 @@ function crb_attach_page_finance_options()
 	
 }
 
+add_action('carbon_fields_register_fields', 'crb_attach_page_certificates_options');
+function crb_attach_page_certificates_options()
+{
+	Container::make('post_meta', __('Second title'))
+		->where('post_id', '=', 406)
+		->add_tab(__('Title'), array(
+			Field::make('text', 'crb_page_certificates_title_ro', __('page_certificates_title_ro'))
+				->set_width(30),
+			Field::make('text', 'crb_page_certificates_title_ru', __('page_certificates_title_ru'))
+				->set_width(30),
+			Field::make('text', 'crb_page_certificates_title_en', __('page_certificates_title_en'))
+				->set_width(30),
+		));
+
+}
+
 add_action('carbon_fields_register_fields', 'crb_attach_page_about_options');
 function crb_attach_page_about_options()
 {

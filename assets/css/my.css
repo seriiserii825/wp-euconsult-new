@@ -4559,7 +4559,8 @@ p {
 }
 @media screen and (max-width: 450px) {
 	._orinationRight_25.wrap_mW {
-		right: 5% !important;
+		width: 33%;
+		right: 0 !important;
 	}
 }
 
@@ -4840,6 +4841,10 @@ p {
 .certificate-single__content {
 	padding: 30px;
 	background: #f9f9f9;
+}
+.certificate-single__link {
+	text-decoration: underline;
+	color: #1A2B6D;
 }
 .certificate-single__content a:hover {
 	 color: #333;

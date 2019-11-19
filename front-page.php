@@ -302,7 +302,7 @@ $finance_gallery = new WP_Query([
 <section class="section-highlight dark-scroll section certificate-section section-dark" id="js-certificates" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/i/section-bg.jpg')">
     <div class="certificate__wrap">
         <header class="section__header section__header--center">
-            <h2 class="section__title"><?php echo get_the_title(406); ?></h2>
+            <h2 class="section__title"><?php echo carbon_get_post_meta(406, 'crb_page_certificates_title'.get_lang()) ?></h2>
         </header>
         <div class="certificate__inner">
             <div class="slider__arrow slider__arrow-left">
