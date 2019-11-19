@@ -1794,7 +1794,7 @@ p {
 	}
 
 	.consultation .section__title {
-		padding-bottom: 30px;
+		padding-bottom: 10px;
 		font-size: 34px;
 	}
 }
@@ -4136,7 +4136,7 @@ p {
 	}
 
 	.consultation .section__title {
-		padding-bottom: 30px;
+		padding-bottom: 10px;
 		max-width: 230px;
 		font-size: 24px;
 	}
@@ -4174,7 +4174,7 @@ p {
 	}
 
 	.footer .section__title {
-		padding-bottom: 20px;
+		padding-bottom: 10px;
 		font-size: 17px;
 	}
 

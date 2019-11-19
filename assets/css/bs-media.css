@@ -157,6 +157,12 @@
 	.history__slider-wrap {
 		padding-bottom: 20px;
 	}
+	.idea.section {
+		padding-bottom: 70px;
+	}
+	.idea.section .slick-dots {
+		bottom: -34px;
+	}
 }
 
 @media screen and (max-width: 560px) {
@@ -184,6 +190,7 @@
 	.certificate-section__img {
 		padding-left: 20px;
 		padding-right: 20px;
+		max-width: 280px;
 	}
 
 	.popup h1 {
@@ -211,9 +218,6 @@
 
 	.video-section__content {
 		max-width: 260px;
-	}
-	.certificate-section__img {
-		max-width: 280px;
 	}
 
 	.video-section__content .slider__arrow-left,
