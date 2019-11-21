@@ -61,7 +61,7 @@
                 <h2 class="section__title"><?php the_title(); ?></h2>
             </header>
             <div class="reimbursabile__content"><?php the_content(); ?></div>
-            <div class="btn"><?php echo carbon_get_theme_option('crb_btn_services' . get_lang()); ?></div>
+            <a href="<?php echo get_page_link(12); ?>" class="btn"><?php echo carbon_get_theme_option('crb_btn_services' . get_lang()); ?></a>
         </div>
     </section>
 

@@ -4261,9 +4261,9 @@ p {
 		padding: 40px 0;
 	}
 
-	.our-services-intro.page-intro {
-		margin-bottom: 26px;
-	}
+	/*.our-services-intro.page-intro {*/
+	/*	margin-bottom: 26px;*/
+	/*}*/
 
 	.our-services-intro.page-intro p {
 		display: none;
@@ -5135,5 +5135,9 @@ p {
 	/*display: none;*/
 }
 #js-certificates {
+	/*display: none;*/
+}
+.video-section,
+.certificate-section {
 	/*display: none;*/
 }

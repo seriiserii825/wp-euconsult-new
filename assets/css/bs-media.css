@@ -163,6 +163,9 @@
 	.idea.section .slick-dots {
 		bottom: -34px;
 	}
+	.video-section__overlay {
+		left: 5px;
+	}
 }
 
 @media screen and (max-width: 560px) {
@@ -207,7 +210,7 @@
 
 	.header__content .logo {
 		position: relative;
-		margin-right: 40px;
+		/*margin-right: 40px;*/
 	}
 }
 
