@@ -5076,6 +5076,12 @@ p {
 .video-section__item {
 	position: relative;
 }
+.video-section__image {
+	position: relative;
+	height: 156px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
 .video-section__item:hover {
 	cursor: pointer;

@@ -402,7 +402,7 @@ jQuery(document).ready(function ($) {
 			}, 3500);
 		});
 	};
-	closeVideoPopup();
+	// closeVideoPopup();
 
 	let certificateSlider = function () {
 		$('#js-certificate__slider').slick({
@@ -533,7 +533,7 @@ jQuery(document).ready(function ($) {
 			$(this).find('.video-page__link').addClass('active');
 		});
 	};
-	showVideoItemPopup();
+	// showVideoItemPopup();
 
 	let videoSlider = function () {
 		$('#js-video-slider').slick({

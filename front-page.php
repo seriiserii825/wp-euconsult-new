@@ -278,7 +278,8 @@ $finance_gallery = new WP_Query([
                 <div class="video-slider" id="js-video-slider">
 					<?php while ($video->have_posts()): ?>
 						<?php $video->the_post(); ?>
-                        <div class="video-section__item" style="background-image: url('<?php echo kama_thumb_src('w=280'); ?>');">
+                        <div class="video-section__item">
+                            <div class="video-section__image" style="background-image: url('<?php echo kama_thumb_src('w=280'); ?>');"></div>
                             <a class="video-section__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt disponibile la comandarea certificatului de instruire.</a>
 <!--                            <video class="no-forward" autoplay muted >-->
 <!--                                <source src="--><?php //echo carbon_get_the_post_meta('crb_video_link'); ?><!--.mp4" type="video/mp4">-->
