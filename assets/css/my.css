@@ -4964,6 +4964,8 @@ p {
 }
 .video-page__item {
 	position: relative;
+	height: 165px;
+	background-size: cover;
 }
 
 
@@ -4991,7 +4993,7 @@ p {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 152px;
+	height: 100%;
 	background: rgba(0,0,0,.8);
 	z-index: 2;
 	transition: all .2s;
@@ -5068,7 +5070,9 @@ p {
 .page-template-page-services {
 	background: #f9f9f9;
 }
-
+.video-section .slick-slide {
+	padding: 0 4px;
+}
 .video-section__item {
 	position: relative;
 }
@@ -5085,9 +5089,9 @@ p {
 }
 .video-section__item {
 	position: relative;
+	height: 156px;
+	background-size: cover;
 }
-
-
 .video-time {
 	position: absolute;
 	bottom: 10px;
@@ -5110,9 +5114,9 @@ p {
 .video-section__overlay {
 	position: absolute;
 	top: 0;
-	left: 8px;
-	width: 270px;
-	height: 152px;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	background: rgba(0,0,0,.8);
 	z-index: 2;
 	transition: all .2s;

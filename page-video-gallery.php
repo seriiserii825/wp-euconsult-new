@@ -33,12 +33,12 @@ get_header();
 		<?php if ($video->have_posts()): ?>
 			<?php while ($video->have_posts()): ?>
 				<?php $video->the_post(); ?>
-                <div class="video-page__item">
+                <div class="video-page__item" style="background-image: url('<?php echo kama_thumb_src('w=280'); ?>');">
                     <a class="video-page__link" href="<?php echo get_page_link(406); ?>">Aceste videouri sunt disponibile la comandarea certificatului de instruire.</a>
-                    <video class="no-forward"  autoplay muted controlsList="nodownload" >
-                        <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.mp4" type="video/mp4">
-                        <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.ogg" type="video/ogg">
-                    </video>
+<!--                    <video class="no-forward"  autoplay muted controlsList="nodownload" >-->
+<!--                        <source src="--><?php //echo carbon_get_the_post_meta('crb_video_link'); ?><!--.mp4" type="video/mp4">-->
+<!--                        <source src="--><?php //echo carbon_get_the_post_meta('crb_video_link'); ?><!--.ogg" type="video/ogg">-->
+<!--                    </video>-->
                     <div class="video-page__overlay"></div>
                 </div>
 			<?php endwhile; ?>
