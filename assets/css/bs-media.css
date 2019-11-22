@@ -166,6 +166,9 @@
 	.video-section__overlay {
 		left: 5px;
 	}
+	.video-page__item {
+		margin-bottom: 30px;
+	}
 }
 
 @media screen and (max-width: 560px) {

@@ -4,6 +4,7 @@
 	<?php the_post(); ?>
 
 	<?php $finance_gallery_bg_image_url = carbon_get_post_meta(get_the_ID(), 'crb_finance_single_image'); ?>
+<!--	--><?php //$finance_gallery_bg_image_url = kama_thumb_src('w=1920') ?>
 
     <div class="finance-single">
         <section class="finance-single section-dark page-intro" style="background-image: url('<?php echo $finance_gallery_bg_image_url; ?>'); background-position: center; background-size: cover;">

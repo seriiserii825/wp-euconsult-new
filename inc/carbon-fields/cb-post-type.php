@@ -13,10 +13,10 @@
 		Container::make( 'post_meta', __( 'Finantari' ) )
 		         ->where( 'post_type', '=', 'finance' )
 		         ->add_tab( __( 'Image' ), array(
-			         Field::make( 'image', 'crb_finance_single_image', __( 'Image' ) )
+			         Field::make( 'image', 'crb_finance_single_image', __( 'crb_finance_single_image' ) )
 			              ->set_value_type( 'url' ),
 
-			         Field::make( 'image', 'crb_idea_finance_page_img', __( 'Idea finance page img' ) )
+			         Field::make( 'image', 'crb_idea_finance_page_img', __( 'crb_idea_finance_page_img' ) )
 			              ->set_value_type( 'url' )
 			              ->set_help_text( '309x210' )
 		         ) );
