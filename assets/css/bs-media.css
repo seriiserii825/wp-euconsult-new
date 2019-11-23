@@ -215,6 +215,12 @@
 		position: relative;
 		/*margin-right: 40px;*/
 	}
+
+	/*.finance-single .main-single img {*/
+	/*	width: auto;*/
+	/*	height: 220px;*/
+	/*	overflow: hidden;*/
+	/*}*/
 }
 
 @media screen and (max-width: 380px) {

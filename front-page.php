@@ -87,10 +87,7 @@ $finance_gallery = new WP_Query([
                     <div class="finance-gallery__after"></div>
                     <div class="finance-gallery__content">
                         <a class="finance-gallery__img-link" href="<?php the_permalink(); ?>">
-                            <!--							--><?php //echo the_post_thumbnail('full'); ?>
 							<?php echo kama_thumb_img('w=618 &h=420'); ?>
-                            <!--	                        --><?php //echo kama_thumb_img( 'w=800 &h=548' ); ?>
-                            <!--	                        --><?php //echo kama_thumb_img( 'w=1024 &h=696' ); ?>
                         </a>
                         <h6>
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?> ></a>

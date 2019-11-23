@@ -1390,8 +1390,8 @@ p {
 }
 
 @media screen and (max-width: 686px) {
-	.finance-gallery__after {
-		display: none;
+	.finance-gallery__item {
+		margin-bottom: 30px;
 	}
 }
 
