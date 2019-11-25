@@ -37,7 +37,8 @@ get_header();
                                 </h2>
                             </header>
                             <video class="no-forward"  controls controlsList="nodownload" >
-                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
+                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.mp4" type="video/mp4">
+                                <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.ogg" type='video/ogg'>
                             </video>
 		                <?php endwhile; ?>
 	                <?php else: ?>

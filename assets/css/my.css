@@ -5155,3 +5155,12 @@ p {
 .certificate-section {
 	/*display: none;*/
 }
+.error-404 {
+	padding: 60px 0;
+}
+.error-404 h2 {
+	font-size: 40px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+}
