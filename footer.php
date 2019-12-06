@@ -113,7 +113,7 @@
             </a>
         </li>
         <li class="socials-bottom__item facebook">
-            <a href="https://msng.link/fm/euconsult.md">
+            <a href="https://m.me/euconsult.md">
                 <svg data-bbox="17 6 17 17" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" height="30"
                      width="50" data-type="shape">
                     <g>
