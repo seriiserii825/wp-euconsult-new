@@ -5,6 +5,7 @@ get_header();
  */
 ?>
 
+<?php vardump(is_user_logged_in()); ?>
 
 <?php if (is_user_logged_in()): ?>
 	<?php
@@ -47,7 +48,8 @@ get_header();
                             </h2>
                         </header>
                         <video class="no-forward"  controls controlsList="nodownload" >
-                            <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>" type="video/mp4">
+                            <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.mp4" type="video/mp4">
+                            <source src="<?php echo carbon_get_the_post_meta('crb_video_link'); ?>.ogg" type='video/ogg'>
                         </video>
 					<?php endwhile; ?>
 				<?php else: ?>
@@ -57,6 +59,7 @@ get_header();
         <!--		--><?php //require_once __DIR__.'/template-parts/connect-now.php';?>
     </div>
 <?php else: ?>
+    <h1>Some</h1>
     <h1 class="authorization">
         <a href="<?php echo wp_login_url(home_url('video-page/')); ?>"><?php echo carbon_get_theme_option('crb_login_title' . get_lang()); ?></a>, <?php echo carbon_get_theme_option('crb_authorization_title' . get_lang()); ?>
     </h1>

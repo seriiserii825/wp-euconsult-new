@@ -102,7 +102,7 @@
 					         '2' => 'yes',
 				         ) ),
 			         Field::make( 'text', 'crb_video_link', __( 'Video Link' ) )
-				         ->set_help_text( 'url for video from domen' )
+				         ->set_help_text( 'url for video from domen' ),
 		         ) );
 	}
 
