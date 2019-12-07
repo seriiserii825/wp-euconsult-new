@@ -1,11 +1,13 @@
 <?php
 get_header();
+
 /**
  * Template Name: Video Page
  */
 ?>
 
 <?php if (is_user_logged_in()): ?>
+
 	<?php
 	$user = wp_get_current_user()->roles;
 	$user_role = '';
